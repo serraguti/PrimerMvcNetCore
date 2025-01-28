@@ -6,6 +6,11 @@
         , new { saludo = "Hola caracola", year = 2025})
     </li>
     <li>
+        @Html.ActionLink("Vista Controller Get VACIO"
+        , "VistaControllerGet"
+        , "Informacion", new { year = 2025 })
+    </li>
+    <li>
         <a asp-controller="Informacion"
             asp-action="ControladorVista">
             Controlador --> Vista

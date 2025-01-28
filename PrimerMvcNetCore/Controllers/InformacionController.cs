@@ -14,11 +14,15 @@ namespace PrimerMvcNetCore.Controllers
         public IActionResult VistaControllerGet
             (string saludo, int year)
         {
-            //PARA COMPROBAR QUE LOS HEMOS RECIBIDO, 
-            //GUARDAMOS LOS PARAMETROS EN ViewData
-            //PARA VER LA INFORMACION
-            ViewData["DATA"] = "Hola " + saludo
-                + " en el año " + year;
+            if (saludo != null)
+            {
+                ViewData["DATA"] = "Hola " + saludo
+                    + " en el año " + year;
+            }
+            else
+            {
+                ViewData["DATA"] = "Aquí nadie saluda ya...";
+            }
             return View();
         }
 
