@@ -26,11 +26,6 @@ namespace PrimerMvcNetCore.Controllers
             return View();
         }
 
-
-
-
-
-
         //VAMOS A RECIBIR DOS PARAMETROS
         public IActionResult VistaControllerGet
             (string saludo, int? year)
