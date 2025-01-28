@@ -10,18 +10,40 @@ namespace PrimerMvcNetCore.Controllers
             return View();
         }
 
+        public IActionResult VistaControllerPost()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult VistaControllerPost
+            (Persona persona, string aficiones)
+        {
+            ViewData["DATA"] = "Nombre: " + persona.Nombre
+                + ", Email: " + persona.Email
+                + ", Edad: " + persona.Edad
+                + ", Aficiones: " + aficiones;
+            return View();
+        }
+
+
+
+
+
+
         //VAMOS A RECIBIR DOS PARAMETROS
         public IActionResult VistaControllerGet
-            (string saludo, int year)
+            (string saludo, int? year)
         {
-            if (saludo != null)
+            //PREGUNTAMOS SI AÑO HA VENIDO EN LA INFORMACION
+            if (year != null)
             {
                 ViewData["DATA"] = "Hola " + saludo
                     + " en el año " + year;
             }
             else
             {
-                ViewData["DATA"] = "Aquí nadie saluda ya...";
+                ViewData["DATA"] = "Aquí no tenemos tiempo";
             }
             return View();
         }
